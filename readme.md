@@ -1,1 +1,1 @@
-That's pretty much it.
+My take on 4clojure (http://4clojure.com) katas.

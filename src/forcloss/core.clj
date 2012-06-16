@@ -1,14 +1,27 @@
-(ns solutions)
+(ns forcloss.core)
+
 ;22 Count
 (defn fn22[coll]
   (reduce (fn [n _](inc n)) 0 [1 2 3]))
-
+(comment(
 (= (fn22 '(1 2 3 3 1)) 5)	
 (= (fn22 "Hello World") 11)	
 (= (fn22 [[1 2] [3 4] [5 6]]) 3)	
 (= (fn22 '(13)) 1)	
-(= (fn22 '(:a :b :c)) 3)
+(= (fn22 '(:a :b :c)) 3)))
 
+;;23 Reverse
+(defn fn23[coll]
+  (
+    ;; the following doesn't work and is way too complicated
+    ;; map second (sort-by #(key %) > (zipmap (range) coll))
+    ;; (compared to this...)
+    into () coll
+    ))
+
+(= (fn23 [1 2 3 4 5]) [5 4 3 2 1])	
+(= (fn23 (sorted-set 5 7 2 7)) '(7 5 2))	
+(= (fn23 [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])
 
 ;156 Map Defaults
 (defn fn156[d k]
